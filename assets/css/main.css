@@ -20,7 +20,7 @@ section, summary, time, mark, audio, video {
 	margin: 0;
 	padding: 0;
 	border: 0;
-	font-size: 100%;
+	font-size: 120%;
 	font: inherit;
 	vertical-align: baseline;}
 
@@ -1995,7 +1995,7 @@ input, select, textarea {
 
 		.features section {
 			padding: 3.5em 3em 1em 7em ;
-			width: 50%;
+			width: 75%;
 			border-top: solid 1px rgba(255, 255, 255, 0.15);
 			position: relative;
 		}
