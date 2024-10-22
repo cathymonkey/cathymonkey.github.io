@@ -31,16 +31,55 @@
 			<div id="wrapper">
 
 				<!-- Intro -->
-					<section id="intro" class="wrapper style1 fullscreen fade-up">
-						<div class="inner">
-							<h1>Hello</h1>
-							<p>I'm Cathy, a junior double majoring in Computer Science with AI concentration and Math Sciences at Colby College.</p>
-							<p>I'm devoted in technology and human progress.</p>
-							<ul class="actions">
-								<li><a href="#one" class="button scrolly">Learn more</a></li>
-							</ul>
-						</div>
-					</section>
+				<section id="intro" class="wrapper style1 fullscreen fade-up">
+					<div class="inner">
+						<h1>Hello</h1>
+						<p>I'm Cathy, a junior double majoring in Computer Science with AI concentration and Math Sciences at Colby College.</p>
+						<p>I'm devoted to technology and human progress.</p>
+						<ul class="actions">
+							<li><a href="#one" class="button scrolly">Learn more</a></li>
+							<li><a href="javascript:void(0);" class="button" onclick="showResumePrompt()">Show Resume</a></li>
+						</ul>
+					</div>
+				</section>
+				
+				<!-- Hidden form for entering invitation code -->
+				<div id="resumeForm" style="display: none; text-align: center;">
+					<h4>Please enter the invitation code to view the resume:</h4>
+					<input type="text" id="invitationCode" placeholder="Enter invitation code">
+					<input type="button" class="button" value="Submit" onclick="checkResumeCode()">
+					<p id="errorMessage" style="color: red; display: none;">Incorrect code, please try again.</p>
+				</div>
+				
+				<!-- Hidden section for resume link -->
+				<div id="resumeContent" style="display: none; text-align: center; margin-top: 20px;">
+					<h3>Here is the link to the resume:</h3>
+					<a href="resume.pdf" class="button" target="_blank">Download Resume</a>
+				</div>
+				
+				<script>
+					function showResumePrompt() {
+						// Show the hidden invitation code form
+						document.getElementById('resumeForm').style.display = 'block';
+						document.getElementById('errorMessage').style.display = 'none';
+					}
+				
+					function checkResumeCode() {
+						const correctCode = '12345';  // Define your correct invitation code here
+						const inputCode = document.getElementById('invitationCode').value;
+				
+						if (inputCode === correctCode) {
+							// Show resume content if the code is correct
+							document.getElementById('resumeContent').style.display = 'block';
+							document.getElementById('resumeForm').style.display = 'none';  // Hide the form
+							document.getElementById('errorMessage').style.display = 'none';
+						} else {
+							// Show error message if the code is incorrect
+							document.getElementById('errorMessage').style.display = 'block';
+						}
+					}
+				</script>
+				
 
 				<!-- One -->
 					<section id="one" class="wrapper style2 spotlights">
@@ -121,6 +160,7 @@
 							</ul>
 						</div>
 					</section>
+					
 
 				<!-- Three -->
 					<section id="three" class="wrapper style1 fade-up">
